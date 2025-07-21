@@ -1,0 +1,6 @@
+{
+  "name": "api_dados-historicos_ipca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT"
+}
