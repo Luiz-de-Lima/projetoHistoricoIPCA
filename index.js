@@ -8,6 +8,11 @@ const ListarDadosPorAno = services.buscarInflacaoPorAno
 const buscarHistoricoPorId = services.buscarInflacaoPorId
 const calculoReajusteIpca = services.calcularReajusteIPCA
 const buscarIpcaDatas = services.buscarIpcaEntreDatas
+
+app.get('/', (req, res) => {
+    res.json(listarDados);
+});
+
 app.get('/historicoIPCA', (req, res) => {
     const ano = req.query.ano
     if (ano) {
@@ -22,6 +27,7 @@ app.get('/historicoIPCA', (req, res) => {
         res.json(listarDados);
     }
 })
+
 app.get('/historicoIPCA/calculo', (req, res) => {
     const valor = parseFloat(req.query.valor)
     const dataInicialMes = parseInt(req.query.mesInicial)
